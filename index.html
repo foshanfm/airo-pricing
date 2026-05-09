@@ -3,324 +3,265 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIRO AI营销方案 · 价格套餐</title>
+<title>AIRO AI营销 · 价格套餐</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
-    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #0a0a1a;
-    color: #e8e8f0;
+    font-family: 'Noto Sans SC', -apple-system, sans-serif;
+    background: #0b0b1e;
+    color: #e4e4f0;
     min-height: 100vh;
-    overflow-x: hidden;
   }
-
   .container {
-    max-width: 1100px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 40px 30px 60px;
+    padding: 48px 32px 60px;
   }
 
-  /* === HEADER === */
-  .header {
+  /* ===== HERO ===== */
+  .hero {
     text-align: center;
-    margin-bottom: 50px;
-    position: relative;
+    margin-bottom: 56px;
   }
-
-  .header::after {
-    content: '';
-    display: block;
-    width: 120px;
-    height: 3px;
-    background: linear-gradient(90deg, #4f8cff, #a855f7, #f97316);
-    margin: 24px auto 0;
-    border-radius: 2px;
-  }
-
-  .brand {
-    font-size: 14px;
-    letter-spacing: 6px;
+  .hero-badge {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    color: #6b7280;
-    margin-bottom: 12px;
+    color: #a78bfa;
+    border: 1px solid rgba(167,139,250,0.3);
+    border-radius: 20px;
+    padding: 6px 20px;
+    margin-bottom: 20px;
   }
-
-  h1 {
-    font-size: 42px;
+  .hero h1 {
+    font-size: 52px;
     font-weight: 900;
-    background: linear-gradient(135deg, #4f8cff 0%, #a855f7 50%, #f97316 100%);
+    background: linear-gradient(135deg, #60a5fa, #a78bfa, #f97316);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    line-height: 1.3;
+    line-height: 1.2;
   }
-
-  .subtitle {
-    font-size: 18px;
+  .hero .tagline {
+    font-size: 20px;
     color: #9ca3af;
-    margin-top: 12px;
     font-weight: 300;
+    margin-top: 12px;
   }
 
-  /* === WHAT IS AIRO === */
-  .concept-section {
-    background: linear-gradient(135deg, rgba(79,140,255,0.08) 0%, rgba(168,85,247,0.08) 100%);
-    border: 1px solid rgba(79,140,255,0.15);
-    border-radius: 16px;
-    padding: 36px 40px;
-    margin-bottom: 40px;
-  }
-
-  .concept-section h2 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #4f8cff;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .concept-section h2::before {
-    content: '🤖';
-    font-size: 24px;
-  }
-
-  .concept-section p {
-    font-size: 15px;
-    line-height: 1.9;
-    color: #c9cdd6;
-  }
-
-  .concept-section .highlight {
-    color: #a78bfa;
-    font-weight: 500;
-  }
-
-  .concept-section .highlight-orange {
-    color: #fb923c;
-    font-weight: 500;
-  }
-
-  /* === PRICING === */
-  .pricing-section {
-    margin-bottom: 40px;
-  }
-
-  .pricing-section h2 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #e8e8f0;
-    margin-bottom: 24px;
+  /* ===== CONCEPT (short) ===== */
+  .concept {
     text-align: center;
+    margin-bottom: 52px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
   }
+  .concept p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #b0b5c8;
+  }
+  .concept .em { color: #a78bfa; font-weight: 600; }
+  .concept .em-orange { color: #fb923c; font-weight: 600; }
 
-  .pricing-grid {
+  /* ===== PRICING CARDS ===== */
+  .cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 28px;
+    margin-bottom: 28px;
   }
-
-  .price-card {
+  .card {
+    border-radius: 20px;
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-quarterly {
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
-    padding: 32px;
-    position: relative;
-    transition: all 0.3s ease;
   }
-
-  .price-card.recommended {
-    border-color: rgba(168,85,247,0.4);
-    background: linear-gradient(135deg, rgba(168,85,247,0.06) 0%, rgba(79,140,255,0.06) 100%);
+  .card-annual {
+    background: linear-gradient(160deg, rgba(167,139,250,0.12) 0%, rgba(96,165,250,0.08) 100%);
+    border: 1px solid rgba(167,139,250,0.3);
   }
-
-  .price-card.recommended::before {
-    content: '推荐';
+  .card-annual .ribbon {
     position: absolute;
-    top: -1px;
-    right: 24px;
-    background: linear-gradient(135deg, #a855f7, #4f8cff);
-    color: white;
+    top: 20px;
+    right: -32px;
+    background: linear-gradient(90deg, #a78bfa, #60a5fa);
+    color: #fff;
     font-size: 12px;
     font-weight: 700;
-    padding: 4px 16px;
-    border-radius: 0 0 8px 8px;
-    letter-spacing: 2px;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    letter-spacing: 1px;
   }
-
-  .price-card .plan-name {
-    font-size: 16px;
-    font-weight: 500;
-    color: #9ca3af;
-    margin-bottom: 8px;
-  }
-
-  .price-card .price {
-    font-size: 48px;
-    font-weight: 900;
-    color: #fff;
-    line-height: 1.1;
-  }
-
-  .price-card .price .unit {
-    font-size: 16px;
-    font-weight: 400;
+  .card-label {
+    font-size: 14px;
     color: #6b7280;
+    font-weight: 400;
+    margin-bottom: 4px;
   }
-
-  .price-card .price .currency {
+  .card-name {
     font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .card-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+  .card-price .currency {
+    font-size: 24px;
     font-weight: 700;
     color: #a78bfa;
   }
-
-  .price-card .price-note {
-    font-size: 13px;
+  .card-price .amount {
+    font-size: 64px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+  }
+  .card-price .unit {
+    font-size: 16px;
     color: #6b7280;
-    margin-top: 6px;
+    font-weight: 400;
+    margin-left: 4px;
   }
-
-  .price-card .save-badge {
-    display: inline-block;
-    background: rgba(34,197,94,0.12);
-    color: #4ade80;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-top: 12px;
-  }
-
-  .price-card .features {
-    list-style: none;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .price-card .features li {
+  .card-note {
     font-size: 14px;
-    color: #b0b5c0;
-    padding: 6px 0;
-    padding-left: 24px;
-    position: relative;
+    color: #6b7280;
+    margin-bottom: 20px;
   }
-
-  .price-card .features li::before {
+  .card-save {
+    display: inline-block;
+    background: rgba(34,197,94,0.1);
+    color: #4ade80;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
+  .card-perks {
+    list-style: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+  }
+  .card-perks li {
+    font-size: 15px;
+    color: #c0c4d0;
+    padding: 7px 0;
+    padding-left: 28px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .card-perks li::before {
     content: '✓';
     position: absolute;
     left: 0;
     color: #4ade80;
-    font-weight: 700;
+    font-weight: 900;
+    font-size: 16px;
   }
 
-  /* === ADD-ON === */
-  .addon-section {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px;
-    padding: 24px 32px;
-    margin-top: 24px;
+  /* ===== ADD-ON ===== */
+  .addon {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .addon-section .addon-title {
-    font-size: 15px;
-    font-weight: 500;
-    color: #e8e8f0;
-  }
-
-  .addon-section .addon-prices {
-    display: flex;
-    gap: 24px;
-  }
-
-  .addon-section .addon-item {
-    text-align: center;
-  }
-
-  .addon-section .addon-item .val {
-    font-size: 20px;
-    font-weight: 700;
-    color: #fb923c;
-  }
-
-  .addon-section .addon-item .label {
-    font-size: 12px;
-    color: #6b7280;
-    margin-top: 2px;
-  }
-
-  /* === GLOSSARY === */
-  .glossary-section {
-    margin-top: 40px;
-  }
-
-  .glossary-section h2 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #e8e8f0;
-    margin-bottom: 24px;
-    text-align: center;
-  }
-
-  .glossary-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .glossary-item {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px;
-    padding: 20px 24px;
+    border-radius: 14px;
+    padding: 20px 32px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .addon-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #e4e4f0;
+  }
+  .addon-prices {
+    display: flex;
+    gap: 32px;
+  }
+  .addon-price .val {
+    font-size: 28px;
+    font-weight: 900;
+    color: #fb923c;
+  }
+  .addon-price .label {
+    font-size: 13px;
+    color: #6b7280;
   }
 
-  .glossary-item .term {
-    font-size: 15px;
+  /* ===== GLOSSARY ===== */
+  .glossary {
+    margin-bottom: 48px;
+  }
+  .glossary h2 {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 28px;
+    color: #fff;
+  }
+  .gloss-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  .gloss-item {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 22px 20px;
+  }
+  .gloss-item .icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .gloss-item .term {
+    font-size: 16px;
     font-weight: 700;
     color: #a78bfa;
     margin-bottom: 8px;
   }
-
-  .glossary-item .def {
+  .gloss-item .def {
     font-size: 13px;
-    line-height: 1.8;
-    color: #9ca3af;
+    line-height: 1.7;
+    color: #8b90a0;
   }
 
-  /* === PLATFORMS === */
-  .platforms-section {
-    margin-top: 32px;
+  /* ===== PLATFORMS ===== */
+  .platforms {
     text-align: center;
+    margin-bottom: 40px;
   }
-
-  .platforms-section h3 {
-    font-size: 16px;
-    font-weight: 500;
-    color: #6b7280;
-    margin-bottom: 16px;
+  .platforms h3 {
+    font-size: 14px;
+    color: #4b5563;
+    margin-bottom: 14px;
+    font-weight: 400;
   }
-
-  .platform-tags {
+  .pills {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
   }
-
-  .platform-tag {
-    background: rgba(79,140,255,0.08);
-    border: 1px solid rgba(79,140,255,0.15);
+  .pill {
+    background: rgba(96,165,250,0.06);
+    border: 1px solid rgba(96,165,250,0.15);
     border-radius: 20px;
     padding: 6px 18px;
     font-size: 13px;
@@ -328,176 +269,158 @@
     font-weight: 500;
   }
 
-  /* === FOOTER === */
+  /* ===== FOOTER ===== */
   .footer {
-    margin-top: 50px;
     text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.05);
   }
+  .footer p { font-size: 13px; color: #374151; }
+  .footer .cta { font-size: 16px; color: #9ca3af; margin-top: 6px; font-weight: 500; }
 
-  .footer p {
-    font-size: 13px;
-    color: #4b5563;
-    line-height: 1.8;
-  }
-
-  .footer .contact {
-    font-size: 15px;
-    color: #9ca3af;
-    margin-top: 8px;
-  }
-
-  /* === PRINT === */
+  /* ===== PRINT ===== */
   @media print {
-    body { background: #fff; color: #1a1a2e; }
-    .container { padding: 20px; }
-    .concept-section { border-color: #ddd; background: #f8f9ff; }
-    .price-card { border-color: #ddd; background: #fafbff; }
-    .price-card.recommended { border-color: #a855f7; }
-    .price-card .price { color: #1a1a2e; }
-    .glossary-item { border-color: #eee; background: #f8f8fc; }
-    .platform-tag { border-color: #ccc; background: #f0f4ff; color: #4f6bbf; }
+    body { background: #fff; color: #111; }
+    .card-quarterly { border: 2px solid #ddd; background: #f9fafb; }
+    .card-annual { border: 2px solid #a78bfa; background: #f5f3ff; }
+    .card-price .amount, .card-name { color: #111; }
+    .gloss-item { border-color: #eee; background: #fafafa; }
   }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="brand">AI 营销解决方案</div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">AI 推荐优化</div>
     <h1>AIRO 价格套餐</h1>
-    <div class="subtitle">让 AI 成为您的 24 小时金牌销售</div>
+    <div class="tagline">让 AI 成为您的 24 小时金牌销售</div>
   </div>
 
-  <!-- WHAT IS AIRO -->
-  <div class="concept-section">
-    <h2>什么是 AIRO？</h2>
+  <!-- CONCEPT -->
+  <div class="concept">
     <p>
-      <span class="highlight">AIRO</span>（AI Recommendation Optimization）是一种全新的 <span class="highlight-orange">AI 推荐优化技术</span>。
-      当用户在 <span class="highlight">豆包、DeepSeek、千问、元宝、文心、ChatGPT</span> 等主流 AI 平台搜索相关问题时，
-      AI 会<span class="highlight-orange">主动推荐您的品牌</span>，并将客户直接引导到您的官网、电话、门店或社交媒体，
-      实现从"被搜索"到"被推荐"的质变。<br><br>
-      与传统 SEO 不同，AIRO 不是优化搜索排名，而是<span class="highlight">让 AI 记住您的品牌</span>，
-      在回答用户问题时<span class="highlight-orange">优先展示</span>，相当于在每个 AI 平台都安排了一位不知疲倦的金牌销售。
+      当客户在 <span class="em">豆包、DeepSeek、千问、元宝、ChatGPT</span> 等平台搜索时，<br>
+      AI 会<span class="em-orange">主动推荐您的品牌</span>，并一键引导客户到店/到官网/拨打电话。<br>
+      <span class="em">100% 推荐可见率</span> · <span class="em-orange">最快 7 天见效</span> · 全程托管
     </p>
   </div>
 
   <!-- PRICING -->
-  <div class="pricing-section">
-    <h2>价格套餐</h2>
-    <div class="pricing-grid">
-
-      <div class="price-card">
-        <div class="plan-name">季度方案 · 灵活试水</div>
-        <div class="price">
-          <span class="currency">¥</span>9,900
-          <span class="unit">/季度</span>
-        </div>
-        <div class="price-note">相当于 ¥3,300/月 · 起签一个季度</div>
-        <ul class="features">
-          <li>覆盖 5 大主流 AI 平台推荐</li>
-          <li>含 1 个核心关键词优化</li>
-          <li>100% AI 推荐可见率保障</li>
-          <li>专人对接 · 全程托管</li>
-          <li>最快 7 天见效 · 30 天全部优化</li>
-        </ul>
+  <div class="cards">
+    <div class="card card-quarterly">
+      <div class="card-label">灵活试水</div>
+      <div class="card-name">季度方案</div>
+      <div class="card-price">
+        <span class="currency">¥</span>
+        <span class="amount">9,900</span>
+        <span class="unit">/季度</span>
       </div>
-
-      <div class="price-card recommended">
-        <div class="plan-name">年度方案 · 锁定优惠</div>
-        <div class="price">
-          <span class="currency">¥</span>22,000
-          <span class="unit">/年</span>
-        </div>
-        <div class="price-note">相当于 ¥1,833/月</div>
-        <div class="save-badge">比季度方案节省 ¥17,600</div>
-        <ul class="features">
-          <li>包含季度方案全部权益</li>
-          <li>锁定当前价格 · 续费不涨价</li>
-          <li>优先技术支持</li>
-          <li>季度效果报告 · 数据可视化</li>
-          <li>年度复盘 · 策略优化建议</li>
-        </ul>
-      </div>
-
+      <div class="card-note">≈ ¥3,300/月 · 3 个月起签</div>
+      <ul class="card-perks">
+        <li>5 大主流 AI 平台推荐</li>
+        <li>1 个核心关键词</li>
+        <li>100% 推荐可见率</li>
+        <li>专人对接 · 全程托管</li>
+        <li>7 天见效 · 30 天全部优化</li>
+      </ul>
     </div>
 
-    <div class="addon-section">
-      <div class="addon-title">➕ 增加关键词</div>
-      <div class="addon-prices">
-        <div class="addon-item">
-          <div class="val">¥998</div>
-          <div class="label">/月/词</div>
-        </div>
-        <div class="addon-item">
-          <div class="val">¥9,999</div>
-          <div class="label">/年/词</div>
-        </div>
+    <div class="card card-annual">
+      <div class="ribbon">省 ¥17,600</div>
+      <div class="card-label">长期锁定</div>
+      <div class="card-name">年度方案</div>
+      <div class="card-price">
+        <span class="currency">¥</span>
+        <span class="amount">22,000</span>
+        <span class="unit">/年</span>
+      </div>
+      <div class="card-note">≈ ¥1,833/月</div>
+      <div class="card-save">比季度方案节省 ¥17,600</div>
+      <ul class="card-perks">
+        <li>包含季度方案全部权益</li>
+        <li>锁定价格 · 续费不涨价</li>
+        <li>优先技术支持</li>
+        <li>季度效果报告</li>
+        <li>年度复盘 · 策略优化</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ADD-ON -->
+  <div class="addon">
+    <div class="addon-title">➕ 增加关键词</div>
+    <div class="addon-prices">
+      <div class="addon-price">
+        <span class="val">¥998</span>
+        <span class="label">/月/词</span>
+      </div>
+      <div class="addon-price">
+        <span class="val">¥9,999</span>
+        <span class="label">/年/词</span>
       </div>
     </div>
   </div>
 
   <!-- GLOSSARY -->
-  <div class="glossary-section">
-    <h2>名词解释</h2>
-    <div class="glossary-grid">
-
-      <div class="glossary-item">
-        <div class="term">AI 推荐优化（AIRO）</div>
-        <div class="def">通过技术手段让主流 AI 平台在回答用户问题时主动推荐您的品牌，而非被动等待被搜索到。相当于为每个 AI 平台配置了一位 24 小时不休息的销售代表。</div>
+  <div class="glossary">
+    <h2>常见问题</h2>
+    <div class="gloss-grid">
+      <div class="gloss-item">
+        <div class="icon">🤖</div>
+        <div class="term">什么是 AIRO？</div>
+        <div class="def">让全网 AI 平台主动推荐您的品牌。不是搜索排名优化，而是让 AI 记住您、推荐您。</div>
       </div>
-
-      <div class="glossary-item">
-        <div class="term">关键词</div>
-        <div class="def">用户在 AI 平台搜索时使用的词语。例如"佛山装修公司哪家好"中的"佛山装修公司"就是一个关键词。您选择的关键词越多，覆盖的搜索场景越广，被 AI 推荐的机会越大。</div>
+      <div class="gloss-item">
+        <div class="icon">🔑</div>
+        <div class="term">什么是关键词？</div>
+        <div class="def">客户在 AI 中搜索的词语，如"佛山装修公司"。关键词越多，被推荐的机会越大。</div>
       </div>
-
-      <div class="glossary-item">
-        <div class="term">AI 平台</div>
-        <div class="def">目前覆盖的主流 AI 平台包括：豆包（字节跳动）、DeepSeek、通义千问（阿里）、元宝（腾讯）、文心一言（百度）、Kimi 等，以及海外 ChatGPT、Gemini 等。套餐默认覆盖 5 大平台。</div>
+      <div class="gloss-item">
+        <div class="icon">🌐</div>
+        <div class="term">AI 平台有哪些？</div>
+        <div class="def">豆包、DeepSeek、千问、元宝、文心、Kimi、ChatGPT、Gemini 等主流平台。</div>
       </div>
-
-      <div class="glossary-item">
-        <div class="term">推荐可见率</div>
-        <div class="def">当用户搜索您的关键词时，AI 平台推荐您品牌的概率。我们的服务保障 100% 可见率，确保每次相关搜索都能看到您的品牌。</div>
+      <div class="gloss-item">
+        <div class="icon">📊</div>
+        <div class="term">推荐可见率？</div>
+        <div class="def">客户搜索时 AI 推荐您品牌的概率。我们保障 100%，每次搜索都能看到。</div>
       </div>
-
-      <div class="glossary-item">
-        <div class="term">转化路径</div>
-        <div class="def">AI 推荐时附带的联系方式，如官网链接、电话、门店地址、视频号等。用户看到推荐后可一键联系您，缩短从"看到"到"咨询"的距离。</div>
+      <div class="gloss-item">
+        <div class="icon">🔗</div>
+        <div class="term">转化路径？</div>
+        <div class="def">AI 推荐时附带的官网、电话、地址、视频号，客户一键直达。</div>
       </div>
-
-      <div class="glossary-item">
-        <div class="term">全程托管</div>
-        <div class="def">从品牌分析、关键词策略、内容优化到效果监控，全部由专人完成。您无需任何技术操作，只需关注效果数据和客户咨询。</div>
+      <div class="gloss-item">
+        <div class="icon">🛠️</div>
+        <div class="term">全程托管？</div>
+        <div class="def">从分析到优化到监控，专人完成。您无需操作，只看效果。</div>
       </div>
-
     </div>
   </div>
 
   <!-- PLATFORMS -->
-  <div class="platforms-section">
-    <h3>覆盖的主流 AI 平台</h3>
-    <div class="platform-tags">
-      <span class="platform-tag">豆包</span>
-      <span class="platform-tag">DeepSeek</span>
-      <span class="platform-tag">通义千问</span>
-      <span class="platform-tag">腾讯元宝</span>
-      <span class="platform-tag">文心一言</span>
-      <span class="platform-tag">Kimi</span>
-      <span class="platform-tag">ChatGPT</span>
-      <span class="platform-tag">Gemini</span>
-      <span class="platform-tag">小红书问一问</span>
-      <span class="platform-tag">更多平台持续接入中…</span>
+  <div class="platforms">
+    <h3>覆盖平台</h3>
+    <div class="pills">
+      <span class="pill">豆包</span>
+      <span class="pill">DeepSeek</span>
+      <span class="pill">通义千问</span>
+      <span class="pill">腾讯元宝</span>
+      <span class="pill">文心一言</span>
+      <span class="pill">Kimi</span>
+      <span class="pill">ChatGPT</span>
+      <span class="pill">Gemini</span>
+      <span class="pill">小红书</span>
+      <span class="pill">更多…</span>
     </div>
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
     <p>AIRO · AI 推荐优化 — 让 AI 主动推荐您的品牌</p>
-    <p class="contact">详情咨询请联系您的专属顾问</p>
+    <p class="cta">详情咨询请联系您的专属顾问</p>
   </div>
 
 </div>
