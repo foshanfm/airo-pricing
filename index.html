@@ -5,111 +5,123 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AIRO AI营销 · 价格套餐</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Noto Sans SC', -apple-system, sans-serif;
-    background: #0b0b1e;
-    color: #e4e4f0;
+    background: #faf8f5;
+    color: #1a1a2e;
     min-height: 100vh;
   }
   .container {
     max-width: 960px;
     margin: 0 auto;
-    padding: 48px 32px 60px;
+    padding: 52px 36px 60px;
+  }
+
+  /* ===== ACCENT LINE ===== */
+  .accent-bar {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #b8860b, #d4a843);
+    border-radius: 2px;
+    margin: 0 auto 32px;
   }
 
   /* ===== HERO ===== */
   .hero {
     text-align: center;
-    margin-bottom: 56px;
+    margin-bottom: 48px;
   }
-  .hero-badge {
-    display: inline-block;
-    font-size: 12px;
-    letter-spacing: 4px;
+  .hero-tag {
+    font-size: 13px;
+    letter-spacing: 5px;
     text-transform: uppercase;
-    color: #a78bfa;
-    border: 1px solid rgba(167,139,250,0.3);
-    border-radius: 20px;
-    padding: 6px 20px;
-    margin-bottom: 20px;
+    color: #b8860b;
+    margin-bottom: 16px;
+    font-weight: 500;
   }
   .hero h1 {
-    font-size: 52px;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 44px;
     font-weight: 900;
-    background: linear-gradient(135deg, #60a5fa, #a78bfa, #f97316);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1.2;
+    color: #1a1a2e;
+    line-height: 1.3;
+  }
+  .hero h1 span {
+    color: #b8860b;
   }
   .hero .tagline {
-    font-size: 20px;
-    color: #9ca3af;
+    font-size: 18px;
+    color: #6b7280;
     font-weight: 300;
-    margin-top: 12px;
+    margin-top: 14px;
+    letter-spacing: 1px;
   }
 
-  /* ===== CONCEPT (short) ===== */
+  /* ===== CONCEPT ===== */
   .concept {
     text-align: center;
-    margin-bottom: 52px;
-    max-width: 680px;
+    margin-bottom: 48px;
+    max-width: 640px;
     margin-left: auto;
     margin-right: auto;
+    padding: 28px 0;
+    border-top: 1px solid #e8e4dd;
+    border-bottom: 1px solid #e8e4dd;
   }
   .concept p {
     font-size: 16px;
-    line-height: 1.9;
-    color: #b0b5c8;
+    line-height: 2;
+    color: #4a4a5a;
   }
-  .concept .em { color: #a78bfa; font-weight: 600; }
-  .concept .em-orange { color: #fb923c; font-weight: 600; }
+  .concept .bold { font-weight: 700; color: #1a1a2e; }
+  .concept .gold { color: #b8860b; font-weight: 600; }
 
-  /* ===== PRICING CARDS ===== */
+  /* ===== PRICING ===== */
   .cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 28px;
-    margin-bottom: 28px;
+    gap: 24px;
+    margin-bottom: 24px;
   }
   .card {
-    border-radius: 20px;
+    border-radius: 16px;
     padding: 36px 32px;
-    position: relative;
-    overflow: hidden;
   }
   .card-quarterly {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: #fff;
+    border: 1px solid #e8e4dd;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   }
   .card-annual {
-    background: linear-gradient(160deg, rgba(167,139,250,0.12) 0%, rgba(96,165,250,0.08) 100%);
-    border: 1px solid rgba(167,139,250,0.3);
+    background: #1a1a2e;
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(26,26,46,0.15);
+    position: relative;
   }
   .card-annual .ribbon {
     position: absolute;
-    top: 20px;
-    right: -32px;
-    background: linear-gradient(90deg, #a78bfa, #60a5fa);
+    top: 18px;
+    right: -28px;
+    background: linear-gradient(90deg, #b8860b, #d4a843);
     color: #fff;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    padding: 5px 40px;
+    padding: 4px 36px;
     transform: rotate(45deg);
     letter-spacing: 1px;
   }
   .card-label {
-    font-size: 14px;
-    color: #6b7280;
-    font-weight: 400;
+    font-size: 13px;
+    color: #9ca3af;
     margin-bottom: 4px;
   }
+  .card-annual .card-label { color: #9ca3af; }
   .card-name {
-    font-size: 22px;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 24px;
     font-weight: 700;
-    color: #fff;
     margin-bottom: 20px;
   }
   .card-price {
@@ -119,101 +131,107 @@
     margin-bottom: 6px;
   }
   .card-price .currency {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
-    color: #a78bfa;
+    color: #b8860b;
   }
   .card-price .amount {
-    font-size: 64px;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 60px;
     font-weight: 900;
-    color: #fff;
     line-height: 1;
   }
   .card-price .unit {
-    font-size: 16px;
-    color: #6b7280;
-    font-weight: 400;
+    font-size: 15px;
+    color: #9ca3af;
     margin-left: 4px;
   }
+  .card-quarterly .card-price .amount { color: #1a1a2e; }
+  .card-annual .card-price .amount { color: #fff; }
   .card-note {
     font-size: 14px;
-    color: #6b7280;
+    color: #9ca3af;
     margin-bottom: 20px;
   }
   .card-save {
     display: inline-block;
-    background: rgba(34,197,94,0.1);
-    color: #4ade80;
+    background: rgba(184,134,11,0.1);
+    color: #b8860b;
     font-size: 15px;
     font-weight: 700;
     padding: 6px 16px;
-    border-radius: 8px;
-    margin-bottom: 24px;
+    border-radius: 6px;
+    margin-bottom: 22px;
+  }
+  .card-annual .card-save {
+    background: rgba(212,168,67,0.15);
+    color: #d4a843;
   }
   .card-perks {
     list-style: none;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 18px;
   }
+  .card-annual .card-perks { border-top-color: rgba(255,255,255,0.1); }
   .card-perks li {
     font-size: 15px;
-    color: #c0c4d0;
     padding: 7px 0;
-    padding-left: 28px;
+    padding-left: 26px;
     position: relative;
     line-height: 1.5;
   }
+  .card-quarterly .card-perks li { color: #4a4a5a; }
+  .card-annual .card-perks li { color: #c0c4d0; }
   .card-perks li::before {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #4ade80;
     font-weight: 900;
-    font-size: 16px;
+    font-size: 15px;
   }
+  .card-quarterly .card-perks li::before { color: #b8860b; }
+  .card-annual .card-perks li::before { color: #d4a843; }
 
   /* ===== ADD-ON ===== */
   .addon {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 14px;
+    background: #fff;
+    border: 1px solid #e8e4dd;
+    border-radius: 12px;
     padding: 20px 32px;
     margin-bottom: 48px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     flex-wrap: wrap;
     gap: 12px;
   }
   .addon-title {
     font-size: 17px;
     font-weight: 600;
-    color: #e4e4f0;
+    color: #1a1a2e;
   }
-  .addon-prices {
-    display: flex;
-    gap: 32px;
-  }
+  .addon-prices { display: flex; gap: 32px; }
   .addon-price .val {
+    font-family: 'Noto Serif SC', serif;
     font-size: 28px;
     font-weight: 900;
-    color: #fb923c;
+    color: #b8860b;
   }
   .addon-price .label {
     font-size: 13px;
-    color: #6b7280;
+    color: #9ca3af;
   }
 
   /* ===== GLOSSARY ===== */
-  .glossary {
-    margin-bottom: 48px;
-  }
+  .glossary { margin-bottom: 48px; }
   .glossary h2 {
-    font-size: 24px;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 26px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 28px;
-    color: #fff;
+    color: #1a1a2e;
   }
   .gloss-grid {
     display: grid;
@@ -221,25 +239,27 @@
     gap: 16px;
   }
   .gloss-item {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 14px;
+    background: #fff;
+    border: 1px solid #e8e4dd;
+    border-radius: 12px;
     padding: 22px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
   }
   .gloss-item .icon {
     font-size: 28px;
     margin-bottom: 10px;
   }
   .gloss-item .term {
+    font-family: 'Noto Serif SC', serif;
     font-size: 16px;
     font-weight: 700;
-    color: #a78bfa;
+    color: #1a1a2e;
     margin-bottom: 8px;
   }
   .gloss-item .def {
     font-size: 13px;
-    line-height: 1.7;
-    color: #8b90a0;
+    line-height: 1.8;
+    color: #6b7280;
   }
 
   /* ===== PLATFORMS ===== */
@@ -249,9 +269,10 @@
   }
   .platforms h3 {
     font-size: 14px;
-    color: #4b5563;
+    color: #9ca3af;
     margin-bottom: 14px;
     font-weight: 400;
+    letter-spacing: 2px;
   }
   .pills {
     display: flex;
@@ -260,12 +281,12 @@
     gap: 10px;
   }
   .pill {
-    background: rgba(96,165,250,0.06);
-    border: 1px solid rgba(96,165,250,0.15);
+    background: #fff;
+    border: 1px solid #e8e4dd;
     border-radius: 20px;
     padding: 6px 18px;
     font-size: 13px;
-    color: #93c5fd;
+    color: #4a4a5a;
     font-weight: 500;
   }
 
@@ -273,37 +294,41 @@
   .footer {
     text-align: center;
     padding-top: 28px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid #e8e4dd;
   }
-  .footer p { font-size: 13px; color: #374151; }
-  .footer .cta { font-size: 16px; color: #9ca3af; margin-top: 6px; font-weight: 500; }
+  .footer p { font-size: 13px; color: #9ca3af; }
+  .footer .cta {
+    font-size: 16px;
+    color: #4a4a5a;
+    margin-top: 8px;
+    font-weight: 500;
+  }
 
   /* ===== PRINT ===== */
   @media print {
-    body { background: #fff; color: #111; }
-    .card-quarterly { border: 2px solid #ddd; background: #f9fafb; }
-    .card-annual { border: 2px solid #a78bfa; background: #f5f3ff; }
-    .card-price .amount, .card-name { color: #111; }
-    .gloss-item { border-color: #eee; background: #fafafa; }
+    body { background: #fff; }
+    .card-annual { background: #1a1a2e; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
 </head>
 <body>
 <div class="container">
 
+  <div class="accent-bar"></div>
+
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-badge">AI 推荐优化</div>
-    <h1>AIRO 价格套餐</h1>
+    <div class="hero-tag">AI 推荐优化</div>
+    <h1><span>AIRO</span> 价格套餐</h1>
     <div class="tagline">让 AI 成为您的 24 小时金牌销售</div>
   </div>
 
   <!-- CONCEPT -->
   <div class="concept">
     <p>
-      当客户在 <span class="em">豆包、DeepSeek、千问、元宝、ChatGPT</span> 等平台搜索时，<br>
-      AI 会<span class="em-orange">主动推荐您的品牌</span>，并一键引导客户到店/到官网/拨打电话。<br>
-      <span class="em">100% 推荐可见率</span> · <span class="em-orange">最快 7 天见效</span> · 全程托管
+      当客户在 <span class="bold">豆包、DeepSeek、千问、元宝、ChatGPT</span> 等平台搜索时，<br>
+      AI 会<span class="gold">主动推荐您的品牌</span>，并一键引导客户到店、到官网或拨打电话。<br>
+      <span class="bold">100% 推荐率</span> · <span class="gold">7 天见效</span> · 全程托管
     </p>
   </div>
 
@@ -350,7 +375,7 @@
 
   <!-- ADD-ON -->
   <div class="addon">
-    <div class="addon-title">➕ 增加关键词</div>
+    <div class="addon-title">增加关键词</div>
     <div class="addon-prices">
       <div class="addon-price">
         <span class="val">¥998</span>
@@ -370,12 +395,12 @@
       <div class="gloss-item">
         <div class="icon">🤖</div>
         <div class="term">什么是 AIRO？</div>
-        <div class="def">让全网 AI 平台主动推荐您的品牌。不是搜索排名优化，而是让 AI 记住您、推荐您。</div>
+        <div class="def">让全网 AI 主动推荐您的品牌。不是搜索排名，而是让 AI 记住您、优先推荐您。</div>
       </div>
       <div class="gloss-item">
         <div class="icon">🔑</div>
         <div class="term">什么是关键词？</div>
-        <div class="def">客户在 AI 中搜索的词语，如"佛山装修公司"。关键词越多，被推荐的机会越大。</div>
+        <div class="def">客户在 AI 中搜索的词语，如"佛山装修公司"。越多关键词，越多被推荐机会。</div>
       </div>
       <div class="gloss-item">
         <div class="icon">🌐</div>
@@ -385,12 +410,12 @@
       <div class="gloss-item">
         <div class="icon">📊</div>
         <div class="term">推荐可见率？</div>
-        <div class="def">客户搜索时 AI 推荐您品牌的概率。我们保障 100%，每次搜索都能看到。</div>
+        <div class="def">客户搜索时 AI 推荐您品牌的概率。我们保障 100%，确保每次都能看到。</div>
       </div>
       <div class="gloss-item">
         <div class="icon">🔗</div>
         <div class="term">转化路径？</div>
-        <div class="def">AI 推荐时附带的官网、电话、地址、视频号，客户一键直达。</div>
+        <div class="def">AI 推荐时附带的官网、电话、门店地址，客户可一键直达。</div>
       </div>
       <div class="gloss-item">
         <div class="icon">🛠️</div>
