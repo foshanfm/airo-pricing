@@ -319,10 +319,49 @@
     font-weight: 500;
   }
 
-  /* ===== PRINT ===== */
+  /* ===== PRINT (single page) ===== */
   @media print {
     body { background: #fff; }
     .card-annual { background: #1a1a2e; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .container { padding: 16px 20px 20px; max-width: 100%; }
+    .accent-bar { margin-bottom: 12px; }
+    .hero { margin-bottom: 16px; }
+    .hero h1 { font-size: 28px; }
+    .hero .tagline { font-size: 13px; margin-top: 6px; }
+    .concept { margin-bottom: 16px; padding: 10px 0; }
+    .concept p { font-size: 11px; line-height: 1.5; }
+    .cards { gap: 12px; margin-bottom: 12px; }
+    .card { padding: 16px 18px; border-radius: 10px; }
+    .card-name { font-size: 16px; margin-bottom: 8px; }
+    .card-price .amount { font-size: 36px; }
+    .card-price .currency { font-size: 14px; }
+    .card-price .unit { font-size: 11px; }
+    .card-note { font-size: 10px; margin-bottom: 8px; }
+    .card-save { font-size: 10px; padding: 3px 8px; margin-bottom: 8px; }
+    .card-perks { padding-top: 8px; }
+    .card-perks li { font-size: 11px; padding: 3px 0 3px 18px; }
+    .addon { padding: 12px 18px; margin-bottom: 16px; border-radius: 8px; }
+    .addon-title { font-size: 13px; margin-bottom: 2px; }
+    .addon-note { font-size: 9px; margin-bottom: 8px; }
+    .addon-prices { gap: 24px; }
+    .addon-price .val { font-size: 22px; }
+    .addon-price .label { font-size: 10px; }
+    .addon-divider { height: 32px; }
+    .glossary { margin-bottom: 16px; }
+    .glossary h2 { font-size: 16px; margin-bottom: 10px; }
+    .gloss-grid { gap: 8px; }
+    .gloss-item { padding: 10px 12px; border-radius: 6px; }
+    .gloss-item .icon { font-size: 16px; margin-bottom: 4px; }
+    .gloss-item .term { font-size: 12px; margin-bottom: 3px; }
+    .gloss-item .def { font-size: 9px; line-height: 1.4; }
+    .platforms { margin-bottom: 12px; }
+    .platforms h3 { font-size: 10px; margin-bottom: 6px; }
+    .pills { gap: 4px; }
+    .pill { font-size: 9px; padding: 2px 8px; }
+    .footer { padding-top: 10px; }
+    .footer p { font-size: 9px; }
+    .footer .cta { font-size: 11px; margin-top: 4px; }
+    @page { size: A4; margin: 8mm; }
   }
 </style>
 </head>
